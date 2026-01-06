@@ -1,10 +1,10 @@
 //+------------------------------------------------------------------+
 //|                                                killZoneClass.mqh |
 //|                                     Copyright 2025, SlySoftwares |
-//|                                     https://www.slysoftwares.com |
+//|                                 https://github.com/sly-softwarem |
 //+------------------------------------------------------------------+
 #property copyright "Copyright 2025, SlySoftwares"
-#property link      "https://www.slysoftwares.com"
+#property link      "https://github.com/sly-software"
 
 #include <sly/Utils.mqh>
 #include <sly/GetOpenPricesAndtime.mqh>

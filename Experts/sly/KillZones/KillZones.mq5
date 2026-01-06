@@ -1,10 +1,10 @@
 //+------------------------------------------------------------------+
 //|                                                    killZones.mq5 |
 //|                                     Copyright 2025, sylsoftwares |
-//|                                      https://www.slysoftware.com |
+//|                                  https://github.com/sly-software |
 //+------------------------------------------------------------------+
 #property copyright "Copyright 2025, sylsoftwares"
-#property link      "https://www.slysoftware.com"
+#property link      "https://github.com/sly-software"
 #property version   "1.00"
 
 #include <sly/killZoneClass.mqh>

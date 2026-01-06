@@ -3,7 +3,10 @@
 *.ex5
 *.log
 *.dat
-Profiles/
+Profiles/Charts/Default/
+Profiles/Charts/Euro/
+Profiles/Charts/Market Overview/
+Profiles/Charts/British Pound/
 Shared Projects/
 Services/
 Scripts/
