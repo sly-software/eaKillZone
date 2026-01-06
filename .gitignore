@@ -1,0 +1,36 @@
+*.[oa]
+*~
+*.ex5
+*.log
+*.dat
+Profiles/
+Shared Projects/
+Services/
+Scripts/
+Libraries/
+Images/
+Experts/Advisors/
+Experts/Examples/
+Experts/Free Robots/
+Indicators/Examples/
+Indicators/Free Indicators/
+Include/Arrays/
+Include/Canvas/
+Include/ChartObjects/
+Include/Charts/
+Include/Controls/
+Include/Expert/
+Include/Files/
+Include/Generic/
+Include/Graphics/
+Include/Indicators/
+Include/Math/
+Include/MovingAverages.mqh
+Include/Object.mqh
+Include/OpenCL/
+Include/StdLibErr.mqh
+Include/Strings/
+Include/Tools/
+Include/Trade/
+Include/VirtualKeys.mqh
+Include/WinAPI/
