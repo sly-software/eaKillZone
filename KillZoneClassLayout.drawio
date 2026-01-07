@@ -1,0 +1,22 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.2.9 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.2.9">
+  <diagram name="Page-1" id="lNyfG706MRHAWnpYIOgF">
+    <mxGraphModel dx="1042" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wzfh0NbrwoQRZEnx5rne-1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Class:&amp;nbsp; KillZoneClass" vertex="1">
+          <mxGeometry height="320" width="340" x="30" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wzfh0NbrwoQRZEnx5rne-2" parent="wzfh0NbrwoQRZEnx5rne-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;u style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;VARIABLES&lt;/b&gt;&lt;/u&gt;&lt;/div&gt;struct: HighLowPoints{ double highPoint, double lowpoint }" vertex="1">
+          <mxGeometry height="60" width="340" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wzfh0NbrwoQRZEnx5rne-3" parent="wzfh0NbrwoQRZEnx5rne-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;&lt;u&gt;&lt;b&gt;METHODS&lt;/b&gt;:&lt;/u&gt;&lt;/div&gt;&lt;div&gt;Static void KillZonesEngine():&lt;/div&gt;&lt;/div&gt;static void GetOPOT():&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Static void drawAsiaLondNewYrkKZs():&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Static void kzRectangle();&lt;/div&gt;&lt;div&gt;Static void DOP():&lt;/div&gt;&lt;div&gt;Static void WOP():&lt;/div&gt;&lt;div&gt;Static void drawLine():&lt;/div&gt;&lt;div&gt;Static HighLowPricePoints getHighLowPrices():&lt;/div&gt;&lt;div&gt;Static datetime timeReformartKZ():&lt;/div&gt;&lt;div&gt;Static void ObjectCleanup():&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="340" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="wzfh0NbrwoQRZEnx5rne-4" parent="wzfh0NbrwoQRZEnx5rne-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;u&gt;&lt;b&gt;IMPORTS&lt;/b&gt;&lt;/u&gt;&lt;div&gt;Utils.mqh&lt;/div&gt;&lt;div&gt;GetOpenPricesAndtime.mqh&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="340" y="260" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

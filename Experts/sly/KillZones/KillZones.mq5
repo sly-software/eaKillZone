@@ -23,7 +23,6 @@ string objLabelsPrefix = "KZO--";
 //+------------------------------------------------------------------+
 int OnInit() {
     KillZones::ObjectCleanup(objLabelsPrefix);
-
     KillZones::GetOPOT(arrDOP, arrDOT, arrWOP, arrWOT, kzDaysback, wopLookbackPeriod);
     KillZones::KillZonesEngine(kzDaysback, arrDOP, arrDOT, arrWOP, arrWOT);
 
