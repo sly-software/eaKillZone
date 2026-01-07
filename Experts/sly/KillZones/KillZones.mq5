@@ -22,7 +22,7 @@ string objLabelsPrefix = "KZO--";
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
 int OnInit() {
-    ObjectsDeleteAll(0, objLabelsPrefix);
+    KillZones::ObjectCleanup(objLabelsPrefix);
 
     KillZones::GetOPOT(arrDOP, arrDOT, arrWOP, arrWOT, kzDaysback, wopLookbackPeriod);
     KillZones::KillZonesEngine(kzDaysback, arrDOP, arrDOT, arrWOP, arrWOT);
@@ -41,8 +41,6 @@ void OnTick() {
 //| Expert deinitialization function                                 |
 //+------------------------------------------------------------------+
 void OnDeinit(const int reason) {
-    ObjectsDeleteAll(0, objLabelsPrefix);
-    EventKillTimer();
-    ChartRedraw();
+    KillZones::ObjectCleanup(objLabelsPrefix);
 }
 //+------------------------------------------------------------------+

@@ -19,14 +19,6 @@ class KillZones {
     /* Destructor */
     ~KillZones() {}
 
-    /* Get Open prices of daily, weekly, monthly */
-    static void GetOPOT(double & arrDOPs[], datetime & arrDOTs[],
-                        double & arrWOPs[], datetime & arrWOTs[],
-                        int lookBackDays, int lookBackWeeks) {
-
-        getOP(arrDOPs, arrDOTs, lookBackDays, PERIOD_D1);     // get OP for daily draw
-        getOP(arrWOPs, arrWOTs, lookBackWeeks, PERIOD_W1);    // get OP for weekly draw
-    }
 
     /* Kill zones main function */
     static void KillZonesEngine(int daysToDraw, double & arrDOPs[], datetime & arrDOTs[], double & arrWOPs[], datetime & arrWOTs[]) {
@@ -47,6 +39,17 @@ class KillZones {
             }
         }
     }
+
+
+    /* Get Open prices of daily, weekly, monthly */
+    static void GetOPOT(double & arrDOPs[], datetime & arrDOTs[],
+                        double & arrWOPs[], datetime & arrWOTs[],
+                        int lookBackDays, int lookBackWeeks) {
+
+        getOP(arrDOPs, arrDOTs, lookBackDays, PERIOD_D1);     // get OP for daily draw
+        getOP(arrWOPs, arrWOTs, lookBackWeeks, PERIOD_W1);    // get OP for weekly draw
+    }
+
 
     /* Draw Killzones for current day and previous days */
     static void drawAsiaLondNewYrkKZs(datetime date, color akzColor, color lkzColor, color nkzColor) {
@@ -78,6 +81,7 @@ class KillZones {
         }
     }
 
+
     /* Draw daily opening prices up to the number of lookback periods */
     static void DOP(datetime &arrDot[], double &arrDop[]) {
         for(int i = 0; i < ArraySize(arrDot) && ArraySize(arrDot) == ArraySize(arrDop); i++) {
@@ -91,6 +95,7 @@ class KillZones {
             drawLine(lnSt, lnEnd, prStart, prEnd, dopLineName);
         }
     }
+
 
     /* Draw weekly opening price */
     static void WOP(datetime &dtStart[], double &prOpen[]) {
@@ -117,6 +122,7 @@ class KillZones {
         }
     }
 
+
     /* Draw line given coordiantes*/
     static void drawLine(datetime lnSt, datetime lnEnd, double prOpen, double prClose, string dopLineName) {
         ObjectCreate(
@@ -136,9 +142,10 @@ class KillZones {
         ObjectSetString(ChartID(), dopLineName, OBJPROP_TOOLTIP, dopLineName);
     }
 
+
     /* WILL DRAW RECTANGLE GIVEN COORDINATES AND LABELS */
     static void kzRectangle(string zone, color zoneColor, datetime timeStart, datetime timeEnd, string zoneLabelDescription) {
-        HighLowPricePoints pricePoints = getHighLowPricesOfKZ(timeStart, timeEnd);
+        HighLowPricePoints pricePoints = getHighLowPrices(timeStart, timeEnd);
 
         ObjectCreate(
             ChartID(),
@@ -158,8 +165,9 @@ class KillZones {
         ObjectSetString(ChartID(), zone, OBJPROP_TOOLTIP, zone);
     }
 
+
     /* A FUNCTION TO GET RATES, HIGH, LOW given a time range */
-    static HighLowPricePoints getHighLowPricesOfKZ(datetime tmStart, datetime tmEnd) {
+    static HighLowPricePoints getHighLowPrices(datetime tmStart, datetime tmEnd) {
         int HighestCandle, lowestCandle /*timeShift*/;
         double High[], Low[];
         MqlRates PriceInformation[];
@@ -193,6 +201,7 @@ class KillZones {
 
         return pps;
     }
+
 
     /* WILL REFORMAT TIME ACCORDINGLY */
     static datetime timeReformartKZ(datetime date, string session) {
@@ -243,6 +252,12 @@ class KillZones {
         }
 
         return StructToTime(dt);
+    };
+
+    static void ObjectCleanup(string prefix) {
+        ObjectsDeleteAll(0, prefix);
+        EventKillTimer();
+        ChartRedraw();
     };
 };
 //+------------------------------------------------------------------+
