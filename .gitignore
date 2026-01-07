@@ -7,6 +7,10 @@ Profiles/Charts/Default/
 Profiles/Charts/Euro/
 Profiles/Charts/Market Overview/
 Profiles/Charts/British Pound/
+Profiles/SymbolSets/
+Profiles/Templates/ADX.tpl
+Profiles/Templates/BollingerBands.tpl
+Profiles/Templates/Momentum.tpl
 Shared Projects/
 Services/
 Scripts/
