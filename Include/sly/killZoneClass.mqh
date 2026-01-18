@@ -1,7 +1,7 @@
 //+------------------------------------------------------------------+
 //|                                                killZoneClass.mqh |
 //|                                     Copyright 2026, SlySoftwares |
-//|                                 https://github.com/sly-softwarem |
+//|                                  https://github.com/sly-software |
 //+------------------------------------------------------------------+
 #include <sly/Utils.mqh>
 #include <sly/GetOpenPricesAndtime.mqh>
@@ -20,7 +20,7 @@ class KillZones {
     ~KillZones() {}
 
 
-    /* Kill zones main function */
+    /* METHOD: Kill zones main function */
     static void KillZonesEngine(int daysToDraw, double & arrDOPs[], datetime & arrDOTs[], double & arrWOPs[], datetime & arrWOTs[]) {
         /* Will run on normal days and weekend */
         if(daysToDraw >= 1) {
@@ -33,7 +33,7 @@ class KillZones {
                 }
             }
 
-            // If your on H4 chart draw WOP
+            /* If your on H4 chart draw WOP */
             if(_Period <= PERIOD_H4) {
                 WOP(arrWOTs, arrWOPs);
             }
@@ -41,7 +41,7 @@ class KillZones {
     }
 
 
-    /* Get Open prices of daily, weekly, monthly */
+    /* METHOD: Get Open prices of daily, weekly, monthly */
     static void GetOPOT(double & arrDOPs[], datetime & arrDOTs[],
                         double & arrWOPs[], datetime & arrWOTs[],
                         int lookBackDays, int lookBackWeeks) {
@@ -51,7 +51,7 @@ class KillZones {
     }
 
 
-    /* Draw Killzones for current day and previous days */
+    /* METHOD: Draw Killzones for current day and previous days */
     static void drawAsiaLondNewYrkKZs(datetime date, color akzColor, color lkzColor, color nkzColor) {
         datetime akzStart = timeReformartKZ(date, "ASs");
         datetime akzEnd = timeReformartKZ(date, "ASe");
@@ -82,7 +82,7 @@ class KillZones {
     }
 
 
-    /* Draw daily opening prices up to the number of lookback periods */
+    /* METHOD: Draw daily opening prices up to the number of lookback periods */
     static void DOP(datetime &arrDot[], double &arrDop[]) {
         for(int i = 0; i < ArraySize(arrDot) && ArraySize(arrDot) == ArraySize(arrDop); i++) {
             string dopLineName = objLabelsPrefix + "DOP:: " + TimeToString(arrDot[i]);
@@ -97,7 +97,7 @@ class KillZones {
     }
 
 
-    /* Draw weekly opening price */
+    /* METHOD: Draw weekly opening price */
     static void WOP(datetime &dtStart[], double &prOpen[]) {
         for(int i = 0; i < ArraySize(dtStart) && ArraySize(dtStart) == ArraySize(prOpen); i++) {
             string wopLineName = objLabelsPrefix + "WOP:: " + TimeToString(dtStart[i]);
@@ -123,7 +123,7 @@ class KillZones {
     }
 
 
-    /* Draw line given coordiantes*/
+    /* METHOD: Draw line given coordiantes*/
     static void drawLine(datetime lnSt, datetime lnEnd, double prOpen, double prClose, string dopLineName) {
         ObjectCreate(
             0,
@@ -143,7 +143,7 @@ class KillZones {
     }
 
 
-    /* WILL DRAW RECTANGLE GIVEN COORDINATES AND LABELS */
+    /* METHOD: WILL DRAW RECTANGLE GIVEN COORDINATES AND LABELS */
     static void kzRectangle(string zone, color zoneColor, datetime timeStart, datetime timeEnd, string zoneLabelDescription) {
         HighLowPricePoints pricePoints = getHighLowPrices(timeStart, timeEnd);
 
@@ -166,7 +166,7 @@ class KillZones {
     }
 
 
-    /* A FUNCTION TO GET RATES, HIGH, LOW given a time range */
+    /* METHOD: A FUNCTION TO GET RATES, HIGH, LOW given a time range */
     static HighLowPricePoints getHighLowPrices(datetime tmStart, datetime tmEnd) {
         int HighestCandle, lowestCandle /*timeShift*/;
         double High[], Low[];
@@ -203,7 +203,7 @@ class KillZones {
     }
 
 
-    /* WILL REFORMAT TIME ACCORDINGLY */
+    /* METHOD: WILL REFORMAT TIME ACCORDINGLY */
     static datetime timeReformartKZ(datetime date, string session) {
         MqlDateTime dt;
 
@@ -254,6 +254,13 @@ class KillZones {
         return StructToTime(dt);
     };
 
+    /* METHOD: Show previous day/week/month high and low */
+    static void ShowPrevHLpp(int numOfDays, int numOfWeeks) {
+        Print("Under construction!!");
+    }
+
+    /* METHOD: A cleanup function to cleanup all objects of this
+       KillZone class on deinit */
     static void ObjectCleanup(string prefix) {
         ObjectsDeleteAll(0, prefix);
         EventKillTimer();
