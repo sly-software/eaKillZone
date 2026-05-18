@@ -120,6 +120,7 @@ class KillZones {
             ObjectSetInteger(ChartID(), wopLineName, OBJPROP_WIDTH, 1);
             ObjectSetString(ChartID(), wopLineName, OBJPROP_TOOLTIP, wopLineName);
         }
+        ChartRedraw(0);
     }
 
 

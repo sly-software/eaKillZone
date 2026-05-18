@@ -34,6 +34,7 @@ int OnInit() {
 //+------------------------------------------------------------------+
 void OnTick() {
     KillZones::KillZonesEngine(kzDaysback, arrDOP, arrDOT, arrWOP, arrWOT);
+    
 }
 
 //+------------------------------------------------------------------+
